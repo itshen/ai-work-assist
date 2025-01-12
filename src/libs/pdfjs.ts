@@ -1,7 +1,10 @@
-import * as pdfDist from "pdfjs-dist"
-import * as pdfWorker from "pdfjs-dist/build/pdf.worker.mjs";
+import * as pdfDist from "pdfjs-dist";
 
-pdfDist.GlobalWorkerOptions.workerSrc = pdfWorker
+// 使用 CDN 方式加载 worker
+const PDFJS_CDN = "https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.worker.min.js";
+
+// 设置 worker
+pdfDist.GlobalWorkerOptions.workerSrc = PDFJS_CDN;
 
 export {
     pdfDist
